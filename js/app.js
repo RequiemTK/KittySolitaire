@@ -182,6 +182,7 @@ function place(opts = {}) {
         if (performance.now() >= el._until - 5 && !el.classList.contains('drag')) el.style.zIndex = el._z;
       }, el._until - now + 30);
     } else el.style.zIndex = z;
+    el.classList.toggle('done', where.w === 'done'); // finished cards never catch taps, even mid-flight
     pos[id] = where;
     base[id] = { x, y };
   };
